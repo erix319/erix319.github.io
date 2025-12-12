@@ -1,0 +1,105 @@
+// ====================================
+// TYPOGRAPHY
+// ====================================
+// Font styles, sizes, and text formatting for various elements
+
+body
+    font-family: "Lato", sans-serif
+    font-weight: 400
+    font-size: $font-size-paragraph
+    letter-spacing: 0.2rem
+    color: $color-gray
+
+// Title First Component
+// Main page headings with animation effects
+// Classes: .title-first__main (primary heading), .title-first__secondary (secondary heading)
+.title-first
+    color: $color-white
+    &__main
+        display: block
+        font-weight: 800
+        font-size: 5rem
+        line-height: 6rem
+        letter-spacing: 1rem
+        text-transform: uppercase
+        margin-bottom: 1rem
+        animation-name: leftToRight
+        animation-duration: 1s
+        animation-delay: 1s
+        animation-timing-function: ease
+        backface-visibility: hidden
+
+        @include respond(tab-land)
+            font-size: 4rem
+        @include respond(tab-port)
+            font-size: 3.6rem
+            letter-spacing: .5rem
+            margin-bottom: 0
+
+    &__secondary
+        display: block
+        font-weight: 100
+        font-size: 4rem
+        line-height: 4.8rem
+        letter-spacing: 0.5rem
+        animation-name: rightToLeft
+        animation-duration: 1s
+        animation-delay: 1s
+        animation-timing-function: ease
+        backface-visibility: hidden
+        margin-bottom: 6.5rem
+
+        @include respond(tab-land)
+            font-size: 3.5rem
+            margin-bottom: 3.5rem
+        @include respond(tab-port)
+            font-size: 3.2rem
+            letter-spacing: .2rem
+
+// Title Secondary Component
+.title-secondary
+    text-align: center
+    display: inline-block
+    font-size: $font-size-paragraph-h2
+    letter-spacing: 1rem
+    font-weight: 800
+    text-transform: uppercase
+    background: linear-gradient(90deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-brown-dark, 0.7) 99.94%)
+    back-ground-clip: text
+    -webkit-background-clip: text
+    color: transparent
+    backface-visibility: hidden
+    transition: all .4s
+
+    @include respond(tab-land)
+        font-size: 3rem
+    @include respond(tab-port)
+        letter-spacing: .6rem
+
+    &:hover
+        transform: skewY(2deg) skewX(15deg) scale(1.1)
+        text-shadow: $shadow-h2
+    &_white
+        color: $color-white
+        // background: linear-gradient(90deg, rgba($color-white, 0.9) 0.03%, rgba($color-gray, 0.4) 99.94%)
+        // back-ground-clip: text
+        // -webkit-background-clip: text
+        // color: transparent
+
+.title-third
+    font-size: $font-size-paragraph-h3
+    letter-spacing: 0.2rem
+    font-weight: 700
+    text-transform: uppercase
+
+    @include respond(tab-land)
+        font-size: 1.8rem
+
+.paragraph
+    font-size: $font-size-paragraph
+    letter-spacing: 0.2rem
+    line-height: 140%
+    font-weight: 400
+
+    @include respond(tab-land)
+        font-size: 1.5rem

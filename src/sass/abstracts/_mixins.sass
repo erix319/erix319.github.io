@@ -1,0 +1,50 @@
+// ====================================
+// SASS MIXINS
+// ====================================
+// Reusable style patterns for consistent component styling
+
+// Style Link Mixin
+// Applies common text styles to link elements (uppercase, no decoration, styled color)
+// Usage: @include style-link
+// ==== Mixins ====
+@mixin style-link
+    text-transform: uppercase
+    text-decoration: none
+    color: $color-gray
+    display: inline-block
+
+@mixin clearfix
+    &::after
+        content: ""
+        display: table
+        clear: both
+
+// // Column Mixin
+// // Creates a flexible column layout based on the number of columns and quantity
+@mixin col($quantity, $columns)
+    // formula: number of paired columns * single column width + number of gaps
+    width: calc(#{$quantity} * ((100% - (#{$columns} - 1) * #{$gutter-horizontal}) / #{$columns}) + (#{$quantity} - 1) * #{$gutter-horizontal})
+    float: left
+    &:not(:last-child)
+        margin-right: $gutter-horizontal
+
+@mixin phone
+    @media (max-width: 600px)
+        @content
+
+@mixin respond($breakpoint)
+    @if $breakpoint == phone
+        @media only screen and (max-width: 600px)
+            @content
+
+    @if $breakpoint == tab-port
+        @media only screen and (max-width: 900px)
+            @content
+
+    @if $breakpoint == tab-land
+        @media only screen and (max-width: 1240px)
+            @content
+
+    @if $breakpoint == big-screen
+        @media only screen and (min-width: 1800px)
+            @content

@@ -1,0 +1,41 @@
+// ====================================
+// ANIMATIONS
+// ====================================
+// Global keyframe animations used throughout the website
+
+// Left to Right Animation
+// Slides element from left (-10rem) to right (0) with fade-in effect
+// Used for: Main title heading entrance animation
+@keyframes leftToRight
+    0%
+        opacity: 0
+        transform: translateX(-10rem)
+    80%
+        transform: translateX(2rem)
+    100%
+        opacity: 1
+        transform: translateX(0)
+
+// Right to Left Animation
+// Slides element from right (10rem) to left (0) with fade-in effect
+// Used for: Secondary title heading entrance animation
+@keyframes rightToLeft
+    0%
+        opacity: 0
+        transform: translateX(10rem)
+    80%
+        transform: translateX(-2rem)
+    100%
+        opacity: 1
+        transform: translateX(0)
+
+// Button Up Animation
+// Slides element from bottom (5rem) upward to top (0) with fade-in effect
+// Used for: Animated button entrance animation
+@keyframes BtnToUp
+    0%
+        opacity: 0
+        transform: translateY(5rem)
+    100%
+        opacity: 1
+        transform: translateY(0)
